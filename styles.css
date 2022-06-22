@@ -1,0 +1,117 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-size: 300%;
+    background-image: var(--gradient);
+    animation: bg-animation 5s infinite;
+    --gradient: linear-gradient(90deg, #ee6352, purple, #ee6352);
+}
+
+@keyframes bg-animation {
+    0% {background-position: left}
+    50% {background-position: right}
+    100% {background-position: left}
+  }
+
+#calculator {
+    width: 400px;
+	height: 710px;
+	background-color: rgba(242,242,247, .7);
+	margin: 0 auto;
+    top: 100px;
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    /* min-height: 100vh; */
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+}
+
+.calculator-grid > button {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50%;
+    border-width: 0;
+    outline: none;
+    background-color: rgba(242,242,247, .01);
+}
+
+
+.calculator-grid > button:hover {
+    background-color: rgba(242, 242, 247, .9);
+}
+
+button:nth-child(5) {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+button:nth-child(9) {
+    font-size: 1.8rem;
+    background-color: #20b1AA;
+}
+
+button:nth-child(13) {
+    font-size: 1.8rem;
+    background-color: #ffa500;
+}
+
+button:nth-child(17) {
+    font-size: 1.8rem;
+    background-color: #f08080;
+}
+
+button:nth-child(21) {
+    font-size: 1.8rem;
+    background-color: #7d93e0;
+}
+
+button:nth-child(25) {
+    font-size: 1.8rem;
+    background-color: #9477af;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+
+.output {
+    grid-column:  1 / -1;
+    background-color: rgba(242, 242, 247, .01);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: #34282C;
+    font-size: 1.5rem;
+}
+
+
+.output .current-operand {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
